@@ -10,31 +10,49 @@
     <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div id="main-container">
+    <section class="header-navigation">
     <header role="banner">
         <img id="logo" src="images/CDH-logo.svg"/>    
     </header>
-    <nav role="navigation">Nav Bar</nav>
+    <nav role="navigation">
+        <a href="#bio">Bio</a>
+        <a href="#projects">Projects</a>
+    </nav>
 
-    <main role="main">
+    <section id="bio">
         <h1>Claire Hendry</h1>
-
-        <section class="bio">
-            <p>This is my headline and bio</p>
+            <div class="bio">
+            <p>Hi! I'm Claire. I'm a front-end developer interested in making accessible and interactive websites through clean and clever design.</p>
+         
+            <p>I'm interested in using my background in illustration and animation to create interactive and user-oriented websites. A bit of a Jill-of-all-trades, I love coding because it is both big-picture and all about the details; understanding and breaking down complex problems into bite-sized chunks.</p>
+            </div>
         </section>
 
-        <section class="projects">
+    </section>
+
+    <main role="main">
+        <section id="projects" class="projects">
             <h2>Projects</h2>
 
             <div class="project first-project">
-            <img/>
-            <div id="icon1">img</div>
-            <p>Project description and info</p>
+            <a href="https://clairedhendry.github.io/zodiac-quiz/"><img id="icon1" src="images/quiz-title-horizontal.png" alt="small icon of quiz app"/></a>
+            <div class="project-description">
+            <p>Zodiac Quiz. Test your knowledge of the Zodiac signs with this short, interactive quiz.
+                Built with jQuery. 
+                <br>
+                <div class="project-links">
+                <a href="https://clairedhendry.github.io/zodiac-quiz/">Live</a>
+                <a href="https://github.com/clairedhendry/zodiac-quiz">Repo</a>
+                </div>
+            </p>
             </div>
+            
 
         <!--where new projects get added-->
         </section>
     </main>
-
+    </div>
 
     <footer>Contact info</footer>
 
