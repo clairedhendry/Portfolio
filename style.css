@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    font-size: 16pt;
+    background-color: var(--secondary-bg-color);
+}
+
+:root {
+    --main-bg-color: rgb(116, 116, 116);
+    --secondary-bg-color: rgb(216, 216, 216);
+    --main-txt-color: rgb(73, 73, 73);
+ }
+
+header {
+    text-align: center;
+    background-color: var(--main-bg-color);
+    width: 100%;
+}
+
+#logo {
+    width: 75px;
+    margin: 15px;
+}
+
+nav {
+    text-align: center;
+    background-color: var(--secondary-bg-color);
+    color: var(--main-txt-color);
+    margin: 15px;
+}
+
+main {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    background-color: var(--secondary-bg-color);
+    color: var(--main-txt-color);
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}   
