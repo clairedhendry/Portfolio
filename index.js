@@ -1,13 +1,79 @@
 "use strict"
 
-{/* <section class="projects">
-<h2>Projects</h2>
+// DATA
 
-<div class="project first-project">
-<img/>
-<div id="icon1">img</div>
-<p>Project description and info</p>
-</div>
+const projectsArray = [
+    {
+        title: "Zodiac Quiz",
+        source:  "href='https://clairedhendry.github.io/zodiac-quiz/'><img id='icon1' src='images/quiz-title-horizontal.png' alt='small icon of quiz app'",
+        description: "Test your knowledge of the Zodiac signs with this short, interactive quiz. Built with jQuery.", 
+    }
+]
 
-<!--where new projects get added-->
-</section> */}
+
+// FUNCTIONS
+
+function generateDesktopBio() {
+    return `<div class="desktop-bio hidden">
+    <p>Hi! I'm Claire. I'm a front-end developer interested in making accessible and interactive websites through clean and clever design.</p>
+ 
+    <p>I'm interested in using my background in illustration and animation to create interactive and user-oriented websites. A bit of a Jill-of-all-trades, I love coding because it is both big-picture and all about the details; understanding and breaking down complex problems into bite-sized chunks.</p>
+    </div>`
+}
+
+function createNavBar() {
+    return `<div class="large-screen-nav-bar">
+                <img id="logo" src="images/CDH-logo.svg"/>
+                <h1>Claire Hendry</h1>
+                <nav role="navigation">
+                        <a id="bioLink" href="#bio">Bio</a>
+                        <a id="projectLink" href="#projects">Projects</a>
+                </nav>
+            </div>`
+}
+
+function renderNavBar() {
+    const largeNavBar = createNavBar();
+    $("main").prepend(largeNavBar);
+}
+
+
+function generateProjectInfo(source, description) {
+    return `<div class="project first-project">
+    <a ${source}/></a>
+    <div class="project-description">
+    <p>${description}
+    </p>
+    </div>`
+}
+
+function generateProjects() {
+    const source = projects[0].source;
+    const description = projects[0].description;
+    const project = generateProjectInfo(source, description);
+    $("#projects").append(project);
+}
+
+function renderProjects() {
+    generateProjects();
+}
+
+
+// HANDLERS
+
+// $(#bio a).hover(function(event) {
+//     $(main).fadeTo(0, 0.7);
+//     const bio = generateDesktopBio();
+//     $(.desktop-bio).removeClass("hidden");
+
+// }
+
+
+// FUNCTION CALLS
+
+function implementPortfolio() {
+    createNavBar();
+    renderNavBar();
+}
+
+$(implementPortfolio);
