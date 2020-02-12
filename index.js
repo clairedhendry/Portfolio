@@ -25,9 +25,17 @@ function createNavBar() {
     return `<div class="large-screen-nav-bar">
                 <img id="logo" src="images/CDH-logo.svg"/>
                 <h1>Claire Hendry</h1>
+                <div id="tagline">
+                <h3>web development</h3>
+                <h4>illustration</h4>
+                <h5>animation</h5>
+                </div>
                 <nav role="navigation">
                         <a id="bioLink" href="#bio">Bio</a>
                         <a id="projectLink" href="#projects">Projects</a>
+                        <a id="contactLink" href="#contact-form">Contact</a>
+                        <br>
+                        <a id="artistPortfolio" href="https://clairedhendry.com">Art</a>
                 </nav>
             </div>`
 }
