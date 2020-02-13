@@ -46,7 +46,7 @@ function renderNavBar() {
 }
 
 
-function generateProjectInfo(source, description) {
+function generateProjectInfo(source, description) {cd 
     return `<div class="project first-project">
     <a ${source}/></a>
     <div class="project-description">
