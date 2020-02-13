@@ -20,7 +20,7 @@ function generateBio() {
     <div class="bio">
     <p>Hi! I'm Claire. I'm a front-end developer interested in making accessible and interactive websites through clean and clever design.</p>
  
-    <p>I'm interested in using my background in illustration and animation to create interactive and user-oriented websites. A bit of a Jill-of-all-trades, I love coding because it is both big-picture and all about the details; understanding and breaking down complex problems into bite-sized chunks.</p>
+    <p>I'm interested in using my background in illustration and animation to create interactive and user-oriented websites. I love coding because it is both big-picture and all about the details; understanding and breaking down complex problems into bite-sized chunks.</p>
     </div>`
 }
 
@@ -105,19 +105,37 @@ function stickyNavbar() {
     }
 }
 
+const counters = [
+    {
+        bioCounter: 0,
+        projectsCounter: 0,
+    }
+]
+
 function createBio () {
     $("a#bioLink").on("click", function(event) {
+        if (counters[0].bioCounter === 1) {
+            return null;
+        } else {
         $(".projects").remove();
         renderDesktopBio();
+        counters[0].bioCounter = 1;
+        counters[0].projectsCounter = 0;
+        }
     });
 }
 
 function createProjects() {
     $("a#projectLink").on("click", function(event) {
+        if (counters[0].projectsCounter === 1) {
+            return null;
+        } else {
       $(".bio").remove();
       const projects = generateProjects();
       $("main").append(projects);
-
+      counters[0].bioCounter = 0;
+      counters[0].projectsCounter = 1;
+        }
     })
 }
 
