@@ -9,11 +9,12 @@ html, body {
 /* ROOT COLORS */
 
 :root {
-    --main-bg-color: rgb(133, 149, 156);
+    --main-bg-color: rgb(76, 88, 93);
     --secondary-bg-color: rgb(236, 236, 236);
     --main-txt-color: rgb(73, 73, 73);
     --head-text-color: rgb(48, 76, 86);
     --link-color: rgb(255, 255, 255);
+    --dark-link-color: rgb(93, 66, 103)
  }
 
 .warm-palette {
@@ -55,7 +56,7 @@ main {
 
 header {
     text-align: center;
-    /* background-color: var(--main-bg-color); */
+    
     width: 100%;
     margin-bottom: 15px;
 }
@@ -174,6 +175,10 @@ a:link {
 
 nav > a:visited {
     color: var(--link-color);
+}
+
+span > a {
+    color: var(--dark-link-color);
 }
 
 footer {

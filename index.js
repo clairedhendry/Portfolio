@@ -7,8 +7,8 @@ const projectsArray = [
         title: "Zodiac Quiz",
         source:  '<a href="https://clairedhendry.github.io/zodiac-quiz/" target="_blank"><img id="icon1" src="images/quiz-title-horizontal.png" alt="small icon of quiz app"/></a>',
         description: "Test your knowledge of the Zodiac signs with this short, interactive quiz. Built with jQuery.", 
-        live: '<a href="https://clairedhendry.github.io/zodiac-quiz/">Live</a>',
-        repo: '<a href="https://github.com/clairedhendry/zodiac-quiz">Repo</a>',
+        live: '<a href="https://clairedhendry.github.io/zodiac-quiz/" target="_blank">Live</a>',
+        repo: '<a href="https://github.com/clairedhendry/zodiac-quiz" target="_blank">Repo</a>',
     }
 ]
 
