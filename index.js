@@ -5,10 +5,10 @@
 const projectsArray = [
     {
         title: "Zodiac Quiz",
-        source:  '<a href="https://clairedhendry.github.io/zodiac-quiz/" target="_blank"><img id="icon1" src="images/quiz-title-horizontal.png" alt="small icon of quiz app"/></a>',
+        source:  '<a href="https://clairedhendry.github.io/zodiac-quiz/" target="_blank" rel="noopener"><img id="icon1" src="images/zodiac-page.svg" alt="small icon of quiz app"/></a>',
         description: "Test your knowledge of the Zodiac signs with this short, interactive quiz. Built with jQuery.", 
-        live: '<a href="https://clairedhendry.github.io/zodiac-quiz/" target="_blank">Live</a>',
-        repo: '<a href="https://github.com/clairedhendry/zodiac-quiz" target="_blank">Repo</a>',
+        live: '<a href="https://clairedhendry.github.io/zodiac-quiz/" target="_blank" rel="noopener">Live</a>',
+        repo: '<a href="https://github.com/clairedhendry/zodiac-quiz" target="_blank" rel="noopener">Repo</a>',
     }
 ]
 
@@ -46,18 +46,18 @@ function renderDesktopBio() {
 
 function createNavBar() {
     return `<div class="large-screen-nav-bar">
-                <img id="logo" src="images/CDH-logo.svg" alt="circular logo"/>
+                <img id="logo2" src="images/CDH-logo.svg" alt="circular logo"/>
                 <h1>Claire Hendry</h1>
                 <div id="tagline">
                 <p class="subtitles">web development</p>
                 <p class="subtitles">illustration</p>
                 <p class="subtitles">animation</p>
                 </div>
-                <nav role="navigation">
+                <nav>
                         <a id="projectLink" href="#projects">Projects</a>
                         <a id="bioLink" href="#bio">Bio</a>
-                        <a id="contactLink" href="mailto:claire.d.hendry@gmail.com?" target="_top">Contact</a>
-                        <a id="artistPortfolio" href="https://clairedhendry.com" target="_blank">Art</a>
+                        <a id="contactLink" href="mailto:claire.d.hendry@gmail.com?" target="_blank" rel="noopener">Contact</a>
+                        <a id="artistPortfolio" href="https://clairedhendry.com" target="_blank" rel="noopener">Art</a>
                 </nav>
             </div>`
 }
@@ -67,24 +67,23 @@ function renderNavBar() {
     $("main").prepend(largeNavBar);
 }
 
-
 function generateProjectInfo(title, source, description, live, repo) { 
     return `
     <section id="projects" class="projects">
             <h2>Projects</h2>
             <div class="project first-project">
-            <div class="image-container">
-                ${source}
-                <div class="overlay">
-                    <div class="text">Click to Play!</div>
+                <div class="image-container">
+                    ${source}
+                    <div class="overlay">
+                        <div class="text">Click to Play!</div>
+                    </div>
                 </div>
-            </div>
-            <div class="project-description">
-            <h3>${title}</h3>
-            <p>${description}
-            </p>
-            <span>${live} ${repo}</span>
-
+                <div class="project-description">
+                <h3>${title}</h3>
+                <p>${description}
+                </p>
+                <span>${live} ${repo}</span>
+                </div>
             </div>
     </section>`
 }
@@ -99,21 +98,28 @@ function generateProjects() {
     $("main").append(project);
 }
 
-
-
-
 // HANDLERS
+
+function myFunction() {
+    var x = document.getElementById("navLinks");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
 
 window.onscroll = function() {stickyNavbar()};
 function stickyNavbar() {
     const navbar = document.getElementById("navbar");
-    const sticky = navbar.offsetTop;
-    if (window.pageYOffset >= sticky) {
+    if (window.pageYOffset >= 152) {
         navbar.classList.add("sticky")
     } else {
         navbar.classList.remove("sticky");
     }
 }
+
+
 
 const counters = [
     {
@@ -137,6 +143,7 @@ function createBio () {
 
 function createProjects() {
     $("a#projectLink").on("click", function(event) {
+        
         if (counters[0].projectsCounter === 1) {
             return null;
         } else {

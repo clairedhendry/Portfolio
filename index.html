@@ -9,8 +9,8 @@
     <meta name="description" content="Portfolio site for developer Claire Hendry">
     <link rel="icon" href="images/logo2.ico" type="images/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Vollkorn&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Exo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -23,10 +23,15 @@
             </header>
         
             <nav id="navbar">
-                <a id="projectLink1" href="#projects">Projects</a>
-                <a id="bioLink1" href="#bio">Bio</a>           
-                <a id="contactLink" href="mailto:claire.d.hendry@gmail.com?" target="_top">Contact</a>
-                <a id="artistPortfolio" href="https://clairedhendry.com" target="_blank">Art</a>
+                <div id="navLinks" class="navLinks">
+                    <a id="projectLink1" href="#projects">Projects</a>
+                    <a id="bioLink1" href="#bio">Bio</a>           
+                    <a id="contactLink" href="mailto:claire.d.hendry@gmail.com?" target="_blank" rel="noopener">Contact</a>
+                    <a id="artistPortfolio" href="https://clairedhendry.com" target="_blank" rel="noopener">Art</a>
+                </div>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
             </nav>
 
             <section id="bio">
@@ -43,13 +48,13 @@
     </div>
 
     <footer>
-        <a href="mailto:claire.d.hendry@gmail.com?" target="_top">claire.d.hendry@gmail.com</a>
+        <a href="mailto:claire.d.hendry@gmail.com?" target="_blank">claire.d.hendry@gmail.com</a>
         <br>
-        <a class="footer-links" href="https://github.com/clairedhendry" target="_blank"><img src="images/githubwhite.svg" alt="GitHub logo"/></a>
-        <a class="footer-links" href="https://www.linkedin.com/in/claire-hendry-18105660/" target="_blank"><img src="images/linkedin.png" alt="LinkedIn logo"></a>
+        <a class="footer-links" href="https://github.com/clairedhendry" target="_blank" rel="noopener"><img src="images/githubwhite.svg" alt="GitHub logo"/></a>
+        <a class="footer-links" href="https://www.linkedin.com/in/claire-hendry-18105660/" target="_blank" rel="noopener"><img src="images/linkedin.png" alt="LinkedIn logo"></a>
     </footer>
 
-  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="index.js"></script>
 </body>
 </html>
