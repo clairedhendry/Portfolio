@@ -24,13 +24,23 @@ function generateBio() {
     </div>`
 }
 
+function generateDesktopBio() {
+    return `
+    <div class="bio">
+    <p>Hi! I'm Claire. I'm a front-end developer interested in making accessible and interactive websites through clean and clever design.
+    <br>
+    <br>
+    I'm interested in working on a team with great and creative programmers and using my background in illustration and animation to create interactive and user-oriented websites. I love coding because it is both big-picture and all about the details; understanding and breaking down complex problems into bite-sized chunks.</p>
+    </div>`
+}
+
 function renderBio() {
     const bio = generateBio();
     $("#bio").append(bio);
 }
 
 function renderDesktopBio() {
-    const bio = generateBio();
+    const bio = generateDesktopBio();
     $("main").append(bio);
 }
 
