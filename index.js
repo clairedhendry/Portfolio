@@ -5,7 +5,7 @@
 const projectsArray = [
     {
         title: "Zodiac Quiz",
-        source:  '<a href="https://clairedhendry.github.io/zodiac-quiz/"><img id="icon1" src="images/quiz-title-horizontal.png" alt="small icon of quiz app"/></a>',
+        source:  '<a href="https://clairedhendry.github.io/zodiac-quiz/" target="_blank"><img id="icon1" src="images/quiz-title-horizontal.png" alt="small icon of quiz app"/></a>',
         description: "Test your knowledge of the Zodiac signs with this short, interactive quiz. Built with jQuery.", 
         live: '<a href="https://clairedhendry.github.io/zodiac-quiz/">Live</a>',
         repo: '<a href="https://github.com/clairedhendry/zodiac-quiz">Repo</a>',
@@ -20,7 +20,7 @@ function generateBio() {
     <div class="bio">
     <p>Hi! I'm Claire. I'm a front-end developer interested in making accessible and interactive websites through clean and clever design.</p>
  
-    <p>I'm interested in using my background in illustration and animation to create interactive and user-oriented websites. I love coding because it is both big-picture and all about the details; understanding and breaking down complex problems into bite-sized chunks.</p>
+    <p>I'm interested in working on a team with great and creative programmers and using my background in illustration and animation to create interactive and user-oriented websites. I love coding because it is both big-picture and all about the details; understanding and breaking down complex problems into bite-sized chunks.</p>
     </div>`
 }
 
@@ -36,18 +36,18 @@ function renderDesktopBio() {
 
 function createNavBar() {
     return `<div class="large-screen-nav-bar">
-                <img id="logo" src="images/CDH-logo.svg"/>
+                <img id="logo" src="images/CDH-logo.svg" alt="circular logo"/>
                 <h1>Claire Hendry</h1>
                 <div id="tagline">
-                <h3>web development</h3>
-                <h4>illustration</h4>
-                <h5>animation</h5>
+                <p class="subtitles">web development</p>
+                <p class="subtitles">illustration</p>
+                <p class="subtitles">animation</p>
                 </div>
                 <nav role="navigation">
                         <a id="projectLink" href="#projects">Projects</a>
                         <a id="bioLink" href="#bio">Bio</a>
                         <a id="contactLink" href="mailto:claire.d.hendry@gmail.com?" target="_top">Contact</a>
-                        <a id="artistPortfolio" href="https://clairedhendry.com">Art</a>
+                        <a id="artistPortfolio" href="https://clairedhendry.com" target="_blank">Art</a>
                 </nav>
             </div>`
 }
@@ -70,7 +70,7 @@ function generateProjectInfo(title, source, description, live, repo) {
                 </div>
             </div>
             <div class="project-description">
-            <p>${title}</p>
+            <h3>${title}</h3>
             <p>${description}
             </p>
             <span>${live} ${repo}</span>
@@ -108,7 +108,7 @@ function stickyNavbar() {
 const counters = [
     {
         bioCounter: 0,
-        projectsCounter: 0,
+        projectsCounter: 1,
     }
 ]
 

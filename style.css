@@ -142,7 +142,7 @@ p {
 
 /* NAVIGATION STYLING */
 
-nav {
+#navbar {
     text-align: center;
     overflow: hidden;
     display: flex;
@@ -151,9 +151,6 @@ nav {
     background-color: var(--main-bg-color);
 }
 
-/* nav > a {
-    width: 50px;
-} */
 
 .sticky {
     position: fixed;
@@ -277,22 +274,10 @@ h1 {
     margin-bottom: 30px;
 }
 
-h3, h4, h5 {
+.subtitles {
     margin-top: 0;
     margin-bottom: 0;
-  
-}
-
-h3 {
     font-size: medium;
-}
-
-h4 {
-    font-size: small;
-}
-
-h5 {
-    font-size: small;
 }
 
 .desktop-bio {
