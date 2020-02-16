@@ -29,7 +29,7 @@ function generateBio() {
 
 function generateDesktopBio() {
     return `
-    <div class="bio">
+    <div class="bio2">
     <p>Hi! I'm Claire. I'm a front-end developer interested in making accessible and interactive websites through clean and clever design.
     <br>
     <br>
@@ -120,7 +120,7 @@ function generateContactPage() {
 // HANDLERS
 
 function displayNavLinks() {
-    var x = document.getElementById("navLinks");
+    let x = document.getElementById("navLinks");
     if (x.style.display === "block") {
       x.style.display = "none";
     } else {
@@ -134,6 +134,17 @@ function clickNavLinks() {
     })
 }
 
+
+function reload() {
+    $("#navLinks").on("click", function(event) {
+        if (counters[0].bioCounter === 1) {
+            location.reload();
+        } if (counters[0].contactCounter === 1) {
+            location.reload();
+        }
+    })
+}
+
 window.onscroll = function() {stickyNavbar()};
 function stickyNavbar() {
     const navbar = document.getElementById("navbar");
@@ -144,7 +155,21 @@ function stickyNavbar() {
     }
 }
 
+// function runLargeScreens() {
+//     createBio();
+//     createProjects();
+//     createContact();
+// }
 
+// function lookAtScreenSize() {
+//     if (x.matches) {
+//         runLargeScreens();
+//     } 
+// }
+
+// let x = window.matchMedia("(max-width: 1000px)");
+// lookAtScreenSize(x);
+// x.addListener(lookAtScreenSize);
 
 const counters = [
     {
@@ -154,11 +179,13 @@ const counters = [
     }
 ]
 
+
 function createBio () {
     $("a#bioLink").on("click", function(event) {
         if (counters[0].bioCounter === 1) {
             return null;
         } else {
+        $(".bio").remove();
         $(".projects").remove();
         $(".contact").remove();
         renderDesktopBio();
@@ -175,7 +202,9 @@ function createProjects() {
             return null;
         } else {
       $(".bio").remove();
+      $(".bio2").remove();
       $(".contact").remove();
+      $("")
       const projects = generateProjects();
       $("main").append(projects);
       counters[0].bioCounter = 0;
@@ -191,6 +220,7 @@ function createContact() {
             return null;
         } else {
             $(".bio").remove();
+            $(".bio2").remove();
             $(".projects").remove();
             const contact = generateContactPage();
             $("main").append(contact);
@@ -201,10 +231,16 @@ function createContact() {
     })
 }
 
+$("img#logo").on("click", function(event) {
+    location.reload();
+})
+
 
 // FUNCTION CALLS
 
 function implementPortfolio() {
+
+    reload();
     clickNavLinks();
     renderBio()
     createNavBar();
@@ -213,6 +249,8 @@ function implementPortfolio() {
     createBio();
     createProjects();
     createContact();
+    
+    
     
 }
 

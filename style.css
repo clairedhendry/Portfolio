@@ -238,6 +238,13 @@ footer {
     display: none;
 }
 
+.contact > p >.footer-links2 > img {
+    width: 50px;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+
 
 /* MEDIA QUERY 600PX */
 
@@ -388,19 +395,19 @@ h3 {
     font-size: medium;
 }
 
-.desktop-bio {
+.desktop-bio2 {
     display: grid;
     grid-template-columns: 60px 1fr 1fr 60px;
     grid-template-rows: 60px 30px 1fr 1fr 60px;
 }
 
-.bio {
+.bio2 {
     display: grid;
     grid-template-rows: 100px 1fr;
     grid-column-start: 3;
 }
 
-.bio > p {
+.bio2 > p {
     grid-row-start: 2;
 }
 
