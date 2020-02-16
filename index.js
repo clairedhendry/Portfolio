@@ -130,7 +130,7 @@ function displayNavLinks() {
 
 function clickNavLinks() {
     $("#navLinks").on("click", function(event) {
-        $("#navLinks").css("display", "none");
+        $(this).css("display", "none");
     })
 }
 
@@ -154,22 +154,6 @@ function stickyNavbar() {
         navbar.classList.remove("sticky");
     }
 }
-
-// function runLargeScreens() {
-//     createBio();
-//     createProjects();
-//     createContact();
-// }
-
-// function lookAtScreenSize() {
-//     if (x.matches) {
-//         runLargeScreens();
-//     } 
-// }
-
-// let x = window.matchMedia("(max-width: 1000px)");
-// lookAtScreenSize(x);
-// x.addListener(lookAtScreenSize);
 
 const counters = [
     {
