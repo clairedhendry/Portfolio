@@ -126,39 +126,26 @@ p {
     justify-content: center;
 }
 
-.image-container:hover .overlay{
-    opacity: 1;
-   
-}
 
 .overlay {
     
-    
-    transition: .3s ease;
     opacity: 0;
-    height: 100%;
-    width: 30%;
-    margin-left: auto;
-    margin-right: auto;
+ 
     
 }
 
-.text {
-    color: var(--main-txt-color);
-
-}
 
 /* NAVIGATION STYLING */
 
 #navbar {
-    
     overflow: hidden;
     display: flex;
     justify-content: left;
     text-align: left;
     background-color: var(--main-bg-color);
     height: auto;
-    min-height: 30px;
+    min-height: 40px;
+    
     
 }
 
@@ -170,6 +157,9 @@ p {
     line-height: 150%;
 }
 
+input#hamburger.hamburger-menu {
+    width: 34px;
+}
 
 #navbar a {
     text-decoration: none;
@@ -180,12 +170,13 @@ p {
     
 }
 
-#navbar > a.hamburger-menu {
+#navbar > .hamburger-menu {
+    width: 25px;
     display: block;
-    justify-self: left;
+    justify-self: right;
     position: absolute;
-    padding-top: 2px;
-    right: 20px;
+    padding-top: 4px;
+    right: 10px;
 }
 
 .sticky {
@@ -329,6 +320,32 @@ main {
     
 }
 
+.image-container {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+}
+
+.image-container:hover .overlay{
+    opacity: 1;
+   
+}
+
+.overlay {
+    transition: .3s ease;
+    opacity: 0;
+    height: 100%;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.text {
+    color: var(--main-txt-color);
+
+}
+
 .large-screen-nav-bar > nav {
     display: flex;
     flex-direction: column;
@@ -341,6 +358,10 @@ nav {
 }
 
 nav > a:link {
+    color: var(--main-txt-color);
+}
+
+nav > a {
     color: var(--main-txt-color);
 }
 

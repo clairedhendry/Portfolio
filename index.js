@@ -19,9 +19,10 @@ function generateBio() {
     return `
     <div class="bio">
     <p>Hi! I'm Claire. I'm a front-end developer interested in making accessible and interactive websites through clean and clever design.</p>
- 
+    
     <p>I'm interested in working on a team with great and creative programmers and using my background in illustration and animation to create interactive and user-oriented websites. I love coding because it is both big-picture and all about the details; understanding and breaking down complex problems into bite-sized chunks.</p>
-    <p>In my spare time I am blacksmithing, drawing, or hanging out with my cats.</p>
+    
+    <p id="pagebreak">In my spare time I am blacksmithing, drawing, or hanging out with my cats.</p>
 
     </div>`
 }
@@ -59,9 +60,9 @@ function createNavBar() {
                 <p class="subtitles">animation</p>
                 </div>
                 <nav>
-                        <a id="projectLink" href="#projects">Projects</a>
-                        <a id="bioLink" href="#bio">Bio</a>
-                        <a id="contactLink" href="#contact">Contact</a>
+                        <a id="projectLink">Projects</a>
+                        <a id="bioLink">Bio</a>
+                        <a id="contactLink">Contact</a>
                         <a id="artistPortfolio" href="https://clairedhendry.com" target="_blank" rel="noopener">Art</a>
                 </nav>
             </div>`
@@ -118,7 +119,7 @@ function generateContactPage() {
 
 // HANDLERS
 
-function myFunction() {
+function displayNavLinks() {
     var x = document.getElementById("navLinks");
     if (x.style.display === "block") {
       x.style.display = "none";
@@ -126,6 +127,12 @@ function myFunction() {
       x.style.display = "block";
     }
   }
+
+function clickNavLinks() {
+    $("#navLinks").on("click", function(event) {
+        $("#navLinks").css("display", "none");
+    })
+}
 
 window.onscroll = function() {stickyNavbar()};
 function stickyNavbar() {
@@ -198,6 +205,7 @@ function createContact() {
 // FUNCTION CALLS
 
 function implementPortfolio() {
+    clickNavLinks();
     renderBio()
     createNavBar();
     renderNavBar();
