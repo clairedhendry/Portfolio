@@ -5,10 +5,19 @@
 const projectsArray = [
     {
         title: "Zodiac Quiz",
-        source:  '<a href="https://clairedhendry.github.io/zodiac-quiz/" target="_blank" rel="noopener"><img id="icon1" src="images/zodiac-page.svg" alt="small icon of quiz app"/></a>',
+        source:  '<a href="https://clairedhendry.github.io/zodiac-quiz/" target="_blank" rel="noopener"><img class="icon" src="images/zodiac-page.svg" alt="small icon of quiz app"/></a>',
         description: "Test your knowledge of the Zodiac signs with this short, interactive quiz. Built with jQuery.", 
         live: '<a href="https://clairedhendry.github.io/zodiac-quiz/" target="_blank" rel="noopener">Live</a>',
         repo: '<a href="https://github.com/clairedhendry/zodiac-quiz" target="_blank" rel="noopener">Repo</a>',
+        projectNumber: "first-project",
+    },
+    {
+        title: "Nature Image Generator",
+        source: '<a href="https://clairedhendry.github.io/Nature-Image-Generator/" target="_blank" rel="noopener"><img class="icon" src="images/homepage-portrait.png" alt="small icon of nature generator app"/></a>',
+        description: "Choose a color to generate a slideshow of nature images. Built with jQuery.",
+        live: '<a href="https://clairedhendry.github.io/Nature-Image-Generator/" target="_blank" rel="noopener">Live</a>',
+        repo: '<a href="https://github.com/clairedhendry/Nature-Image-Generator" target="_blank" rel="noopener">Repo</a>',
+        projectNumber: "second-project"
     }
 ]
 
@@ -73,11 +82,8 @@ function renderNavBar() {
     $("main").prepend(largeNavBar);
 }
 
-function generateProjectInfo(title, source, description, live, repo) { 
-    return `
-    <section id="projects" class="projects">
-            <h3>Projects</h3>
-            <div class="project first-project">
+function generateProjectInfo(title, source, description, live, repo, projectNumber) { 
+    return  `<div class="project ${projectNumber}">
                 <div class="image-container">
                     ${source}
                     <div class="overlay">
@@ -90,19 +96,25 @@ function generateProjectInfo(title, source, description, live, repo) {
                 </p>
                 <span>${live} ${repo}</span>
                 </div>
-            </div>
-    </section>`
+            </div>`
 }
 
 function generateProjects() {
-    const title = projectsArray[0].title;
-    const source = projectsArray[0].source;
-    const description = projectsArray[0].description;
-    const live = projectsArray[0].live;
-    const repo = projectsArray[0].repo;
-    const project = generateProjectInfo(title, source, description, live, repo);
-    $("main").append(project);
-}
+   $("main").append (`<section id="projects" class="projects">
+   <h3>Projects</h3>
+</section>`)
+
+    for (let i = 0; i < projectsArray.length; i++) {
+        let title = projectsArray[i].title;
+        let source = projectsArray[i].source;
+        let description = projectsArray[i].description;
+        let live = projectsArray[i].live;
+        let repo = projectsArray[i].repo;
+        let projectNumber = projectsArray[i].projectNumber;
+        let project = generateProjectInfo(title, source, description, live, repo, projectNumber);
+        $("#projects").append(project);
+    }
+}    
 
 function generateContactPage() {
     return `
@@ -155,52 +167,50 @@ function stickyNavbar() {
     }
 }
 
-const counters = [
-    {
+const counters =  {
         bioCounter: 0,
         projectsCounter: 1,
         contactCounter: 0,
-    }
-]
+    };
+
 
 
 function createBio () {
     $("a#bioLink").on("click", function(event) {
-        if (counters[0].bioCounter === 1) {
+        if (counters.bioCounter === 1) {
             return null;
         } else {
         $(".bio").remove();
         $(".projects").remove();
         $(".contact").remove();
         renderDesktopBio();
-        counters[0].bioCounter = 1;
-        counters[0].projectsCounter = 0;
-        counters[0].contactCounter = 0;
+        counters.bioCounter = 1;
+        counters.projectsCounter = 0;
+        counters.contactCounter = 0;
         }
     });
 }
 
 function createProjects() {
     $("a#projectLink").on("click", function(event) {
-        if (counters[0].projectsCounter === 1) {
+        if (counters.projectsCounter === 1) {
             return null;
         } else {
       $(".bio").remove();
       $(".bio2").remove();
       $(".contact").remove();
-      $("")
       const projects = generateProjects();
       $("main").append(projects);
-      counters[0].bioCounter = 0;
-      counters[0].projectsCounter = 1;
-      counters[0].contactCounter = 0;
+      counters.bioCounter = 0;
+      counters.projectsCounter = 1;
+      counters.contactCounter = 0;
         }
     })
 }
 
 function createContact() {
     $("a#contactLink").on("click", function(event) {
-        if (counters[0].contactCounter === 1) {
+        if (counters.contactCounter === 1) {
             return null;
         } else {
             $(".bio").remove();
@@ -208,9 +218,9 @@ function createContact() {
             $(".projects").remove();
             const contact = generateContactPage();
             $("main").append(contact);
-            counters[0].bioCounter = 0;
-            counters[0].projectsCounter = 0;
-            counters[0].contactCounter = 1;
+            counters.bioCounter = 0;
+            counters.projectsCounter = 0;
+            counters.contactCounter = 1;
         }
     })
 }
@@ -232,10 +242,7 @@ function implementPortfolio() {
     generateProjects();
     createBio();
     createProjects();
-    createContact();
-    
-    
-    
+    createContact();    
 }
 
 $(implementPortfolio);

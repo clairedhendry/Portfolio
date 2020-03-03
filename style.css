@@ -56,6 +56,10 @@ main {
     justify-content: center;
 }
 
+.hidden {
+    display: none;
+}
+
 
 /* TEXT STYLING */
 
@@ -110,7 +114,7 @@ p {
 }
 
 
-#icon1 {
+.icon {
     width: 275px;
     height: 275px;
     border: 2px rgb(78, 80, 82) solid;
@@ -128,9 +132,7 @@ p {
 
 
 .overlay {
-    
     opacity: 0;
- 
     
 }
 
@@ -245,39 +247,6 @@ footer {
 }
 
 
-
-/* MEDIA QUERY 600PX */
-
-/* @media screen and (min-width: 600px) {
-
-#navbar {
-
-    display: flex;
-    text-align: center;
-    overflow: hidden;
-    flex-direction: row;
-    background-color: var(--main-bg-color);
-}
-
-#navbar > a.hamburger-menu {
-    display: none;
-}
-
-#navbar > #navLinks {
-    display: flex;
-    flex-direction: row;
-    justify-items: center;
-    align-content: space-between;
-}
-
-#navLinks > a {
-    display: flex;
-    justify-content: space-between;
-}
-
-} */
-
-
 /* MEDIA QUERY 1000PX */
 
 @media screen and (min-width: 1000px) {
@@ -290,7 +259,7 @@ footer {
 
 main {
     display: grid;
-    grid-template-columns: 250px 100px 600px 50px;
+    grid-template-columns: 250px 150px 1fr 50px;
     grid-template-rows: auto;
     min-height: 700px;
 }
@@ -299,19 +268,25 @@ main {
     margin-top: 0;
     grid-column-start: 3; 
     display: grid;
-    grid-template-columns: 60px 1fr 1fr 60px;
+    grid-template-columns: 60px 1fr 30px 1fr 60px;
     grid-template-rows: 60px 30px 1fr 1fr 60px;
 }
 
 .projects > h3 {
     margin-top: auto;
     margin-bottom: 0;
-    grid-column: 2 / 4;
+    grid-column: 2 / 5;
+    grid-row: 1;
 }
 
 .first-project {
- grid-column: 2 / 4;
- grid-row: 3 / 5;
+    grid-column: 2 / 3;
+    grid-row: 3 / 5;
+}
+
+.second-project {
+    grid-column: 4 / 5;
+    grid-row: 3 / 5;
 }
 
 .header-navigation {
@@ -320,7 +295,6 @@ main {
    
 .large-screen-nav-bar {
     display: flex;
-    /* grid-row-start: 1; */
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -379,10 +353,6 @@ nav > a:visited {
 #logo2 {
     width: 100px;
     margin: 15px;
-}
-
-h3 {
-    margin-bottom: 10px;
 }
 
 .tagline {
