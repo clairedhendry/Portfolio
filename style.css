@@ -289,6 +289,16 @@ main {
     grid-row: 3 / 5;
 }
 
+.third-project {
+    grid-column: 2 / 3;
+    grid-row: 6 / 8;
+}
+
+.fourth-project {
+    grid-column: 4 / 5;
+    grid-row: 6 / 8;
+}
+
 .header-navigation {
    display: none;
 }

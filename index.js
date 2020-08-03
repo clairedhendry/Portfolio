@@ -4,21 +4,42 @@
 
 const projectsArray = [
     {
+        title: "Creative's Block",
+        source: '<a href="https://creatives-block-client.vercel.app/" target=_"blank" rel="noopener"><img class="icon" src="images/creativesblock.png" alt="small icon of creatives block app" /></a>',
+        description: "A platform for artists and creatives. Post work in progress and get constructive feedback from a community of other creatives. Built with React, Node.js, Express, and PostgreSQL.",
+        live: '<a href="https://creatives-block-client.vercel.app/" target=_"blank" rel="noopener">Live</a>',
+        client_repo: '<a href="https://github.com/clairedhendrycreatives-block-client" target="_blank" rel="noopener">Client Repo</a>',
+        api_repo: '<a href="https://github.com/clairedhendry/creatives-block-api" target="_blank" rel="noopener">API Repo</a>',
+        projectNumber: "first-project"
+    },
+    {
+        title: "Escape to Nature",
+        source: '<a href="https://nature-generator-client.now.sh/" target="_blank" rel="noopener"><img class="icon" src="images/escapetonature.png" alt="small icon of escape to nature app" /></a>',
+        description: "Choose a color to generate a slideshow of nature images with accompanying soundscape. Built with React, Node.js, Express, and PostgreSQL.",
+        live: '<a href="https://nature-generator-client.now.sh/" target="_blank" rel="noopener">Live</a>',
+        client_repo: '<a href="https://github.com/clairedhendry/nature-generator-client" target="_blank" rel="noopener">Client Repo</a>',
+        api_repo: '<a href="https://github.com/clairedhendry/nature-generator-api" target="_blank" rel="noopener">API Repo</a>',
+        projectNumber: "second-project"
+    },
+    {
         title: "Zodiac Quiz",
-        source:  '<a href="https://clairedhendry.github.io/zodiac-quiz/" target="_blank" rel="noopener"><img class="icon" src="images/zodiac-page.svg" alt="small icon of quiz app"/></a>',
-        description: "Test your knowledge of the Zodiac signs with this short, interactive quiz. Built with jQuery.", 
+        source: '<a href="https://clairedhendry.github.io/zodiac-quiz/" target="_blank" rel="noopener"><img class="icon" src="images/zodiac-page.svg" alt="small icon of quiz app"/></a>',
+        description: "Test your knowledge of the Zodiac signs with this short, interactive quiz. Built with jQuery.",
         live: '<a href="https://clairedhendry.github.io/zodiac-quiz/" target="_blank" rel="noopener">Live</a>',
-        repo: '<a href="https://github.com/clairedhendry/zodiac-quiz" target="_blank" rel="noopener">Repo</a>',
-        projectNumber: "first-project",
+        client_repo: '<a href="https://github.com/clairedhendry/zodiac-quiz" target="_blank" rel="noopener">Repo</a>',
+        api_repo: '',
+        projectNumber: "third-project",
     },
     {
         title: "Nature Image Generator",
         source: '<a href="https://clairedhendry.github.io/Nature-Image-Generator/" target="_blank" rel="noopener"><img class="icon" src="images/example-image-portrait.png" alt="small icon of nature generator app"/></a>',
         description: "Choose a color to generate a slideshow of nature images. Built with jQuery.",
         live: '<a href="https://clairedhendry.github.io/Nature-Image-Generator/" target="_blank" rel="noopener">Live</a>',
-        repo: '<a href="https://github.com/clairedhendry/Nature-Image-Generator" target="_blank" rel="noopener">Repo</a>',
-        projectNumber: "second-project"
-    }
+        client_repo: '<a href="https://github.com/clairedhendry/Nature-Image-Generator" target="_blank" rel="noopener">Repo</a>',
+        api_repo: '',
+        projectNumber: "fourth-project"
+    },
+
 ]
 
 
@@ -82,25 +103,25 @@ function renderNavBar() {
     $("main").prepend(largeNavBar);
 }
 
-function generateProjectInfo(title, source, description, live, repo, projectNumber) { 
-    return  `<div class="project ${projectNumber}">
+function generateProjectInfo(title, source, description, live, client_repo, api_repo, projectNumber) {
+    return `<div class="project ${projectNumber}">
                 <div class="image-container">
                     ${source}
                     <div class="overlay">
-                        <div class="text">Click to Play!</div>
+                        <div class="text">Click to View!</div>
                     </div>
                 </div>
                 <div class="project-description">
                 <h3>${title}</h3>
                 <p>${description}
                 </p>
-                <span>${live} ${repo}</span>
+                <span>${live} ${client_repo} ${api_repo}</span>
                 </div>
             </div>`
 }
 
 function generateProjects() {
-   $("main").append (`<section id="projects" class="projects">
+    $("main").append(`<section id="projects" class="projects">
    <h3>Projects</h3>
 </section>`)
 
@@ -109,12 +130,13 @@ function generateProjects() {
         let source = projectsArray[i].source;
         let description = projectsArray[i].description;
         let live = projectsArray[i].live;
-        let repo = projectsArray[i].repo;
+        let client_repo = projectsArray[i].client_repo;
+        let api_repo = projectsArray[i].api_repo;
         let projectNumber = projectsArray[i].projectNumber;
-        let project = generateProjectInfo(title, source, description, live, repo, projectNumber);
+        let project = generateProjectInfo(title, source, description, live, client_repo, api_repo, projectNumber);
         $("#projects").append(project);
     }
-}    
+}
 
 function generateContactPage() {
     return `
@@ -125,7 +147,7 @@ function generateContactPage() {
         <a class="footer-links2" href="https://www.linkedin.com/in/claire-hendry-18105660/" target="_blank" rel="noopener"><img src="images/linkedin.png" alt="LinkedIn logo"></a>
     </p>
     </section>`
-    
+
 }
 
 
@@ -134,21 +156,21 @@ function generateContactPage() {
 function displayNavLinks() {
     let x = document.getElementById("navLinks");
     if (x.style.display === "block") {
-      x.style.display = "none";
+        x.style.display = "none";
     } else {
-      x.style.display = "block";
+        x.style.display = "block";
     }
-  }
+}
 
 function clickNavLinks() {
-    $("#navLinks").on("click", function(event) {
+    $("#navLinks").on("click", function (event) {
         $(this).css("display", "none");
     })
 }
 
 
 function reload() {
-    $("#navLinks").on("click", function(event) {
+    $("#navLinks").on("click", function (event) {
         if (counters[0].bioCounter === 1) {
             location.reload();
         } if (counters[0].contactCounter === 1) {
@@ -157,7 +179,7 @@ function reload() {
     })
 }
 
-window.onscroll = function() {stickyNavbar()};
+window.onscroll = function () { stickyNavbar() };
 function stickyNavbar() {
     const navbar = document.getElementById("navbar");
     if (window.pageYOffset >= 152) {
@@ -167,49 +189,49 @@ function stickyNavbar() {
     }
 }
 
-const counters =  {
-        bioCounter: 0,
-        projectsCounter: 1,
-        contactCounter: 0,
-    };
+const counters = {
+    bioCounter: 0,
+    projectsCounter: 1,
+    contactCounter: 0,
+};
 
 
 
-function createBio () {
-    $("a#bioLink").on("click", function(event) {
+function createBio() {
+    $("a#bioLink").on("click", function (event) {
         if (counters.bioCounter === 1) {
             return null;
         } else {
-        $(".bio").remove();
-        $(".projects").remove();
-        $(".contact").remove();
-        renderDesktopBio();
-        counters.bioCounter = 1;
-        counters.projectsCounter = 0;
-        counters.contactCounter = 0;
+            $(".bio").remove();
+            $(".projects").remove();
+            $(".contact").remove();
+            renderDesktopBio();
+            counters.bioCounter = 1;
+            counters.projectsCounter = 0;
+            counters.contactCounter = 0;
         }
     });
 }
 
 function createProjects() {
-    $("a#projectLink").on("click", function(event) {
+    $("a#projectLink").on("click", function (event) {
         if (counters.projectsCounter === 1) {
             return null;
         } else {
-      $(".bio").remove();
-      $(".bio2").remove();
-      $(".contact").remove();
-      const projects = generateProjects();
-      $("main").append(projects);
-      counters.bioCounter = 0;
-      counters.projectsCounter = 1;
-      counters.contactCounter = 0;
+            $(".bio").remove();
+            $(".bio2").remove();
+            $(".contact").remove();
+            const projects = generateProjects();
+            $("main").append(projects);
+            counters.bioCounter = 0;
+            counters.projectsCounter = 1;
+            counters.contactCounter = 0;
         }
     })
 }
 
 function createContact() {
-    $("a#contactLink").on("click", function(event) {
+    $("a#contactLink").on("click", function (event) {
         if (counters.contactCounter === 1) {
             return null;
         } else {
@@ -225,7 +247,7 @@ function createContact() {
     })
 }
 
-$("img#logo").on("click", function(event) {
+$("img#logo").on("click", function (event) {
     location.reload();
 })
 
@@ -242,7 +264,7 @@ function implementPortfolio() {
     generateProjects();
     createBio();
     createProjects();
-    createContact();    
+    createContact();
 }
 
 $(implementPortfolio);
