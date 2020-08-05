@@ -171,9 +171,9 @@ function clickNavLinks() {
 
 function reload() {
     $("#navLinks").on("click", function (event) {
-        if (counters[0].bioCounter === 1) {
+        if (counters.bioCounter === 1) {
             location.reload();
-        } if (counters[0].contactCounter === 1) {
+        } if (counters.contactCounter === 1) {
             location.reload();
         }
     })
