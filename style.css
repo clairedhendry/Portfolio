@@ -101,8 +101,12 @@ p {
 .project-description {
 
     text-align: left;
-    font-size: 16pt;
+    font-size: 14pt;
     line-height: 150%;
+}
+
+.project-description > p {
+    font-size: 12pt;
 }
 
 
