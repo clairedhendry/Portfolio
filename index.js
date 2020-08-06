@@ -33,7 +33,7 @@ const projectsArray = [
     {
         title: "Nature Image Generator",
         source: '<a href="https://clairedhendry.github.io/Nature-Image-Generator/" target="_blank" rel="noopener"><img class="icon" src="images/example-image-portrait.png" alt="small icon of nature generator app"/></a>',
-        description: "Choose a color to generate a slideshow of nature images. Built with jQuery.",
+        description: "Choose a color to generate a slideshow of nature images. Made for those of us looking for some relaxing imagery. Built with jQuery.",
         live: '<a href="https://clairedhendry.github.io/Nature-Image-Generator/" target="_blank" rel="noopener">Live</a>',
         client_repo: '<a href="https://github.com/clairedhendry/Nature-Image-Generator" target="_blank" rel="noopener">Repo</a>',
         api_repo: '',
