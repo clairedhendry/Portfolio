@@ -8,7 +8,7 @@ const projectsArray = [
         source: '<a href="https://creatives-block-client.vercel.app/" target=_"blank" rel="noopener"><img class="icon" src="images/creativesblock.png" alt="small icon of creatives block app" /></a>',
         description: "A platform for artists and creatives. Post work in progress and get constructive feedback from a community of other creatives. Inspired by my experience teaching college art classes and my own creative projects. Built with React, Node.js, Express, and PostgreSQL.",
         live: '<a href="https://creatives-block-client.vercel.app/" target=_"blank" rel="noopener">Live</a>',
-        client_repo: '<a href="https://github.com/clairedhendrycreatives-block-client" target="_blank" rel="noopener">Client Repo</a>',
+        client_repo: '<a href="https://github.com/clairedhendry/creatives-block-client" target="_blank" rel="noopener">Client Repo</a>',
         api_repo: '<a href="https://github.com/clairedhendry/creatives-block-api" target="_blank" rel="noopener">API Repo</a>',
         projectNumber: "first-project"
     },
