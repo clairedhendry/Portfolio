@@ -82,7 +82,7 @@ function renderDesktopBio() {
 
 function createNavBar() {
     return `<div class="large-screen-nav-bar">
-                <img id="logo2" src="images/CDH-logo.svg" alt="circular logo"/>
+                <img id="logo2" src="images/CDH-logo-blue.svg" alt="circular logo"/>
                 <h2>Claire Hendry</h2>
                 <div id="tagline">
                 <p class="subtitles">web development</p>
@@ -122,7 +122,7 @@ function generateProjectInfo(title, source, description, live, client_repo, api_
 
 function generateProjects() {
     $("main").append(`<section id="projects" class="projects">
-   <h3>Projects</h3>
+   <h1>Projects</h1>
 </section>`)
 
     for (let i = 0; i < projectsArray.length; i++) {
@@ -143,7 +143,7 @@ function generateContactPage() {
     <section id="contact" class="contact">
     <p>Contact me by email at:<a id="contactLink" href="mailto:claire.d.hendry@gmail.com?" target="_blank" rel="noopener"> claire.d.hendry@gmail.com</a>
     <br>
-    Or find me at: <a class="footer-links2" href="https://github.com/clairedhendry" target="_blank" rel="noopener"><img src="images/github-icon.svg" alt="GitHub logo"/></a>
+    Or find me at: <a class="footer-links2" href="https://github.com/clairedhendry" target="_blank" rel="noopener"><img src="images/githubwhite.svg" alt="GitHub logo"/></a>
         <a class="footer-links2" href="https://www.linkedin.com/in/claire-hendry-18105660/" target="_blank" rel="noopener"><img src="images/linkedin.png" alt="LinkedIn logo"></a>
     </p>
     </section>`
