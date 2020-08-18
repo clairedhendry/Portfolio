@@ -103,6 +103,15 @@ function renderNavBar() {
     $("main").prepend(largeNavBar);
 }
 
+function createLines() {
+    return `<div class="lines"></div>`
+}
+
+function renderLines() {
+    const lines = createLines();
+    $("main").append(lines);
+}
+
 function generateProjectInfo(title, source, description, live, client_repo, api_repo, projectNumber) {
     return `<div class="project ${projectNumber}">
                 <div class="image-container">
@@ -261,6 +270,7 @@ function implementPortfolio() {
     renderBio()
     createNavBar();
     renderNavBar();
+    renderLines();
     generateProjects();
     createBio();
     createProjects();

@@ -9,26 +9,21 @@ html, body {
 /* ROOT COLORS */
 
 :root {
-    --main-bg-color: rgb(76, 88, 93);
-    --secondary-bg-color: rgb(236, 236, 236);
+    --main-bg-color: rgb(247, 223, 146);
+    --secondary-bg-color: rgb(255, 255, 255);
     --main-txt-color: rgb(73, 73, 73);
     --head-text-color: rgb(48, 76, 86);
     --link-color: rgb(255, 255, 255);
     --dark-link-color: rgb(93, 66, 103)
  }
 
-.warm-palette {
-  background-color: rgb(250, 129, 8);
-  color: rgb(78, 40, 20)
-
-}
-
 /* MAIN STYLING */
 
  body {
     font-family: 'Exo', sans-serif;
     font-size: 16pt;
-    background-color: var(--secondary-bg-color);  
+    /* background-color: var(--secondary-bg-color);   */
+    
     display: grid;
     grid-template-rows: auto 1fr;
     margin: 0;
@@ -44,7 +39,7 @@ main {
     width: 100vw;
     height: auto;
     padding: 15px;;
-    background-color: var(--secondary-bg-color);
+    /* background-color: var(--secondary-bg-color); */
     color: var(--main-txt-color);
     margin-top: 30px;
 }
@@ -99,7 +94,7 @@ p {
 }
 
 .project-description {
-
+    margin-bottom: 30px;
     text-align: left;
     font-size: 14pt;
     line-height: 150%;
@@ -150,14 +145,12 @@ p {
     text-align: left;
     background-color: var(--main-bg-color);
     height: auto;
-    min-height: 40px;
-    
-    
+    min-height: 40px;    
 }
 
 #navbar > #navLinks {
     display: none;
-    background-color: var(--main-bg-color);
+    /* background-color: var(--main-bg-color); */
     padding-top: 10px;
     padding-bottom: 10px;
     line-height: 150%;
@@ -204,7 +197,7 @@ nav > a:visited {
     color: var(--link-color);
 }
 
-.project-description  a {
+.project-description > a {
     color: var(--dark-link-color);
     text-decoration: none;
 }
@@ -216,8 +209,9 @@ span > a {
 }
 
 footer {
-    background-color: var(--main-bg-color);
+    /* background-color: var(--secondary-bg-color); */
     color: var(--main-txt-color);
+    border-top: solid 3px var(--main-bg-color);
     width: 100%;
     text-align: center;
     line-height: 150%;
@@ -230,6 +224,10 @@ footer {
     width: 50px;
     padding: 5px;
     margin-top: 10px;
+}
+
+#footer > a {
+    color: var(--main-txt-color);
 }
 
 .hidden {
@@ -258,8 +256,14 @@ footer {
 .main-container {
     display: grid;
     grid-template-columns: auto;
+
     height: (100vh - 131px);
     }
+
+.lines {
+    grid-column-start: 2;
+    background-image: url('./images/lines.svg');
+}
 
 main {
     display: grid;
@@ -310,6 +314,7 @@ main {
 .large-screen-nav-bar {
     display: flex;
     flex-direction: column;
+    /* border-right: 3px solid var(--main-bg-color); */
     justify-content: center;
     align-items: center;
     
@@ -345,7 +350,7 @@ main {
     display: flex;
     flex-direction: column;
     line-height: 200%;
-    background-color: var(--secondary-bg-color);
+    /* background-color: var(--secondary-bg-color); */
 }
 
 nav {
@@ -416,4 +421,12 @@ nav > a:visited {
     margin-top: 10px;
 }
 
+}
+
+/*media query 1500px*/
+
+@media only screen and (min-width: 1500px) {
+    .main-container {
+        background-repeat: no-repeat;
+    }
 }
